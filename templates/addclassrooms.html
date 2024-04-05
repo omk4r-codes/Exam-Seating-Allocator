@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<h3 class="text-center">Add Classrooms</h3>
+<div class="container my-4">
+    <form method="post" action="/addclassrooms">
+        {% csrf_token %}
+        <div class="form-group my-4">
+            <label for="exampleFormControlInput1">Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="name"
+                placeholder="Enter Classroom Name " required>
+        </div>
+        <div class="form-group my-4">
+            <label for="exampleFormControlInput1">Number of Available Seats</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" name="seats"
+                placeholder="Enter number of seats available" required>
+        </div>
+
+        <button class="btn btn-outline-success" type="submit">Submit</button>
+    </form>
+
+</div>
+{% endblock body %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h2>Welcome, {{request.user}}!</h2>
+
+<a href="/addstudents"><button type="button" class="btn btn-outline-success">Add Students</button></a>
+<a href="/addclassrooms"><button type="button" class="btn btn-outline-success">Add Classrooms</button></a>
+<a href="/generateseating"><button type="button" class="btn btn-outline-success">Generate Seating
+        Arrangement</button></a>
+
+{% endblock body %}
