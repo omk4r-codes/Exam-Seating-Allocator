@@ -8,5 +8,6 @@ urlpatterns = [
     path('logout', views.logoutUser, name="logout"),
     path('addstudents', views.addstudents, name="addstudents"),
     path('addclassrooms', views.addclassrooms, name="addclassrooms"),
-    path('generateseating', views.generateseating, name="generateseating")
+    path('generateseating', views.generateseating, name="generateseating"),
+    path('generatecomplex', views.generatecomplex, name="generatecomplex")
 ]

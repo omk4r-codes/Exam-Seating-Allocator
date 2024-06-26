@@ -8,7 +8,7 @@ class Addstudent(models.Model):
     year = models.CharField(max_length=10)
 
     def __str__(self):
-        return self.name + "    " +self.mis  + "    " + self.branch + "    " + self.year # or any other field you want to display
+        return self.name + "    " +self.mis  + "    " + self.branch + "    " + self.year 
 
 class Addclassrooms(models.Model):
     name = models.CharField(max_length=10)

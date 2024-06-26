@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<h3 class="text-center">Generate Complex Seating Arrangement</h3>
+<div class="container my-4">
+  <form method="post" action="/generatecomplex">
+    {% csrf_token %}
+
+    <div class="form-group my-4">
+      <label>Select Branches</label>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="branches[]" value="Computer">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Computer</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="branches[]" value="EnTC">
+        <label class="form-check-label" for="flexSwitchCheckDefault">EnTC</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="branches[]"
+          value="Metallurgy">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Metallurgy</label>
+      </div>
+      {% comment %} <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="branches[]"
+          value="Electrical">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Electrical</label>
+      </div> {% endcomment %}
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="branches[]"
+          value="Mechanical">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Mechanical</label>
+      </div>
+      {% comment %}
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="branches[]"
+          value="Instrumentation">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Instrumentation</label>
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="branches[]" value="Planning">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Planning</label>
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="branches[]" value="Civil">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Civil</label>
+      </div> {% endcomment %}
+
+
+
+    </div>
+
+    <div class="form-group my-4">
+      <label>Select Available Classrooms</label>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="classrooms[]" value="AC-101">
+        <label class="form-check-label" for="flexSwitchCheckDefault">AC-101</label>
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="classrooms[]" value="AC-102">
+        <label class="form-check-label" for="flexSwitchCheckDefault">AC-102</label>
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="classrooms[]" value="AC-103">
+        <label class="form-check-label" for="flexSwitchCheckDefault">AC-103</label>
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="classrooms[]" value="AC-104">
+        <label class="form-check-label" for="flexSwitchCheckDefault">AC-104</label>
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="classrooms[]" value="AC-201">
+        <label class="form-check-label" for="flexSwitchCheckDefault">AC-201</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="classrooms[]" value="AC-202">
+        <label class="form-check-label" for="flexSwitchCheckDefault">AC-202</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="classrooms[]" value="AC-203">
+        <label class="form-check-label" for="flexSwitchCheckDefault">AC-203</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="classrooms[]" value="AC-204">
+        <label class="form-check-label" for="flexSwitchCheckDefault">AC-204</label>
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="classrooms[]" value="EE-001">
+        <label class="form-check-label" for="flexSwitchCheckDefault">EE-001</label>
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="classrooms[]" value="EE-002">
+        <label class="form-check-label" for="flexSwitchCheckDefault">EE-002</label>
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="classrooms[]" value="EE-003">
+        <label class="form-check-label" for="flexSwitchCheckDefault">EE-003</label>
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="classrooms[]" value="EE-101">
+        <label class="form-check-label" for="flexSwitchCheckDefault">EE-101</label>
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="classrooms[]" value="EE-102">
+        <label class="form-check-label" for="flexSwitchCheckDefault">EE-102</label>
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="classrooms[]" value="EE-103">
+        <label class="form-check-label" for="flexSwitchCheckDefault">EE-103</label>
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="classrooms[]" value="Ex1">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Ex1</label>
+      </div>
+
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="classrooms[]" value="Ex2">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Ex2</label>
+      </div>
+
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="classrooms[]" value="Ex3">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Ex3</label>
+      </div>
+    </div>
+
+    <div class="form-group my-4">
+      <label for="exampleFormControlSelect1">Select Year</label>
+      <select class="form-control" id="exampleFormControlSelect1" name="year" required>
+        <option>FY</option>
+        <option>SY</option>
+        <option>TY</option>
+        <option>Final Year</option>
+      </select>
+    </div>
+
+    {% comment %} <div class="form-group my-4">
+      <label for="courses">Select Courses</label>
+      <select class="form-control" id="courses" name="courses[]" multiple required>
+        <option value="Maths">Maths</option>
+        <option value="Physics">Physics</option>
+        <option value="Chemistry">Chemistry</option>
+        <!-- Add more courses here -->
+      </select>
+    </div> {% endcomment %}
+
+    <!-- Add more inputs for special needs, specific classroom preferences, etc. -->
+
+    <button class="btn btn-outline-success" type="submit">Submit</button>
+
+  </form>
+</div>
+
+{% endblock body %}

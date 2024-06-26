@@ -1,11 +1,69 @@
 {% extends "base.html" %}
 
 {% block body %}
-<h2>Welcome, {{request.user}}!</h2>
+<style>
+        /* Custom CSS to center elements */
+        .centered {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 80vh;
+        }
 
-<a href="/addstudents"><button type="button" class="btn btn-outline-success">Add Students</button></a>
-<a href="/addclassrooms"><button type="button" class="btn btn-outline-success">Add Classrooms</button></a>
-<a href="/generateseating"><button type="button" class="btn btn-outline-success">Generate Seating
-        Arrangement</button></a>
+        .vertical-buttons a {
+                display: block;
+                margin-bottom: 10px;
+                text-align: center;
+        }
 
+        /* Rounded box styling */
+        .rounded-box {
+                background-color: rgba(255, 255, 255, 0.7);
+                border-radius: 20px;
+                padding: 20px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .rounded-box-content {
+                background-color: rgba(255, 255, 255, 0.8);
+                /* White color with low opacity */
+                border-radius: 20px;
+                padding: 20px;
+        }
+
+        /* Set background image for the whole page */
+        body {
+                background-image: url('/static/bg.jpg');
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+                margin: 0;
+                padding: 0;
+        }
+
+        
+</style>
+
+<div class="container">
+        <div class="row centered">
+                <div class="col-md-6 rounded-box">
+                        <div class="rounded-box-content">
+                                <h2>Welcome, {{request.user}}!</h2>
+
+                                <a href="/addstudents"><button type="button" class="btn btn-outline-success my-1">Add
+                                                Students</button></a>
+                                <a href="/addclassrooms"><button type="button" class="btn btn-outline-success my-1">Add
+                                                Classrooms</button></a>
+                                <a href="/generateseating"><button type="button"
+                                                class="btn btn-outline-success my-1">Generate
+                                                Seating
+                                                Arrangement</button></a>
+                                <a href="/generatecomplex"><button type="button"
+                                                class="btn btn-outline-success my-1">Generate
+                                                Complex
+                                                Arrangement</button></a>
+                        </div>
+                </div>
+        </div>
+</div>
 {% endblock body %}
